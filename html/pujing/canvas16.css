@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+
+#test {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 250px;
+height: 250px;
+/*color:#0C0;*/
+/*background:#6F9;*/
+
+/*:link    {background:#6F9;}*/
+:visited {background-color:#3FC;}
+:hover   {}
+:active  {}
+
+}
+/*button:link    {background:#6F9;}*/
+button:visited {background-color:#3FC;}
+button:hover   {background-color:#3FC;}
+button:active  {background-color:#3FC;}
+
+/*:link    {color:#6F9;}
+:visited {color:#6F9;}
+:hover   {color:#6F9;}
+:active  {color:#6F9;}*/
+/*button:link    {background:#6F9;}
+button:visited {background:#6F9;}
+button:hover   {background:#6F9;}
+button:active  {background:#6F9;}*/

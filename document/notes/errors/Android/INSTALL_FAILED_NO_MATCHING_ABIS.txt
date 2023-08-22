@@ -1,0 +1,1 @@
+adb: failed to install D:\myprojects\source\file\apk\Firefox-Android-115.2.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]

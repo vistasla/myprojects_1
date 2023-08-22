@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+button {
+	position: relative;
+	top: 24%;
+	left: 8%;
+	width: 80px;
+	height: 48px;
+}
+#fileSelect {
+	position: absolute;
+	top: 1%;
+	left: 20%;
+	background: #090;
+}
+#draw {
+	position: absolute;
+	top: 18%;
+	left: 20%;
+	background: #090;
+}
+#test1 {
+	z-index: 2;
+	position: relative;
+	top: -38%;
+	left: 37%;
+	width: 200px;
+	height: 200px;
+	/*margin-top: -125px;
+	margin-left: -125px;*/
+	border: 1px solid #666;
+	border-radius: 100%;
+	box-shadow: 0 0 0 190px rgba(0, 0, 0,0.5);
+}
+#test2 {
+	z-index: 3;
+	position: relative;
+	top: -76%;
+	left: 24%;
+	width: 410px;
+	height: 410px;
+	/*margin-top: -125px;
+	margin-left: -125px;*/
+	border: 1px solid #666;
+	background:#0F9;
+	opacity:0.1;
+	
+	
+}
+#drawing {
+	z-index: 1;
+	position: relative;
+	top: 25%;
+	left: 25%;
+	/*width: 400px;
+	height: 400px;*/
+	/*margin-top: -125px;
+	margin-left: -125px;*/
+	/*border: 1px solid #666;*//*background: #0C6;*/
+}
+#drawing1 {
+	position: relative;
+	top: 0%;
+	left: 0%;
+	/*width: 100px;
+	height: 100px;*/
+	/*margin-top: -125px;
+	margin-left: -125px;*/
+	border-radius: 100%;
+	/*border: 1px solid #666;*//*background: #0C6;*/
+	background: #0C6;
+}
+#drawing2 {
+	position: relative;
+	top: 0%;
+	left: 25%;
+	/*width: 50px;
+	height: 50px;*/
+	/*margin-top: -125px;
+	margin-left: -125px;*/
+	border-radius: 100%;
+	/*border: 1px solid #666;*//*background: #0C6;*/
+	background: #6F9;
+}
+#test {
+	position: absolute;
+	background-color: #CFC;
+	height: 800px;
+	width: 800px;
+	left: 501px;
+	top: 77px;
+}
+#preview {
+	background-color: #0FC;
+	height: 200px;
+	width: 100px;
+	position: relative;
+	top: -25%;
+	right: -87%;
+}
+#preview1 {
+	background-color: #0FC;	
+	position:absolute;
+	top: 76%;
+	left: 90%;
+	width: 80px;
+	height: 48px;
+}
+#actions {
+	background-color: #66FF99;
+	position: relative;
+	height: 100px;
+	width: 400px;
+	left: 25%;
+	top: -15%;
+}

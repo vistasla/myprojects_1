@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">My Application</string>
+    <string name="notification_title" translatable="false">title</string>
+    <string name="notification_message" translatable="false">message</string>
+    <string name="ticker_text" translatable="false">ticker</string>
+    <string name="my_image_desc">desc</string>
+    <string name="channel_name">channel_name</string>
+    <string name="channel_description">channel_description</string>
+    <string name="notification_action_text">notification_action_text</string>
+
+</resources>

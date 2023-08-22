@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="testcanvas.css">
+</head>
+<body>
+<!--<input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="handleFiles(this.files)">-->
+<input type="file" id="fileElem" multiple accept="image/*" style="display:none" onchange="previewFile()">
+<button id="fileSelect">Select some files</button>
+<img src="" height="200" alt="Image preview...">
+<button id="draw"   onclick="draw()">draw</button>
+
+<div id="test">
+<canvas id="drawing" ></canvas>
+
+<div id="preview">
+<canvas id="drawing1"></canvas>
+<canvas id="drawing2"></canvas>
+</div>
+<div id="test1"></div>
+<!--<div id="test2"  onmousedown="mousedown()" onmousemove="mousemove()" onmouseup="mouseup()"></div>-->
+<div id="test2"  onmousedown="mousedown()"  onmouseup="mouseup()"></div>
+<div id="actions">
+<button id="rotate-left"  onclick="rotateleft()">rotate-left</button>
+<button id="zoom-in"      onclick="zoomin()">+</button>
+<button id="zoom-out"     onclick="zoomout()">-</button>
+<button id="rotate-right" onclick="rotateright()">rotateright</button>
+<!--<button id="rotate-right" name="button"  onclick="()">right</button>-->
+</div>
+<button id="preview1"  onclick="copy()">preview</button>
+</div>
+<script src="testcanvas3.js" type="text/javascript"></script>
+</body>
+</html>

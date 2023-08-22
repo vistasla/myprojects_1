@@ -1,0 +1,49 @@
+@charset "utf-8";
+/* CSS Document */
+#main {
+	position:absolute;	
+	background-color: #CCC;
+	vertical-align: middle;
+	width: 50%;
+	height: 100%;
+	left: 25%;
+	/*padding-left: 25%;*/	
+}
+input{
+	/*display:block;*/
+	position: relative;
+	font-size: 24px;
+	background: #636;
+	color: #FFF;
+	width: 200;
+	/*width: 50%;*/
+	height: 20px;
+	left: 25%;
+	right: 25%;
+	text-align: center;
+	vertical-align: middle;
+	margin: 25px;
+	padding: 25px;
+	display: block;
+	/*margin:30;
+	padding:30;*/
+	}
+label{
+	
+	font-size: 24px;
+	background: #636;
+	color: #FFF;
+	width: 200;
+	height: 30px;
+	left: 25%;
+	right: 25%;
+	text-align: center;
+	vertical-align: middle;
+	margin: 25px;
+	padding: 25px;
+	display: block;
+	
+	}
+#test {
+	
+}

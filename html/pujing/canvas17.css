@@ -1,0 +1,55 @@
+@charset "utf-8";
+/* CSS Document */
+button {
+position: absolute;
+top: 20%;
+left: 10%;
+width: 250px;
+height: 150px;
+
+}
+#test {
+	position: absolute;
+	top: 30%;
+	left: 30%;
+	width: 750px;
+	height: 750px;
+	margin-top: -125px;
+	margin-left: -125px;
+	border: 1px solid
+#666;
+	/*background: #0C6;*/
+	background-image: url(image/th.jpg);
+
+}
+#drawing {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 250px;
+height: 250px;
+margin-top: -125px;
+margin-left: -125px;
+border: 1px solid
+#666;
+border-radius: 100%;
+/*-webkit-box-shadow: 0 0 0 100px rgba(0,0,0,1);*/
+box-shadow: 0 0 0 120px
+rgba(0, 0, 0,0.3);
+background: none repeat scroll 0% 0%
+#e1d5d500;
+}
+#drawing1{
+	position: absolute;
+	top: 50%;
+	left: 80%;
+	width: 250px;
+	height: 250px;
+	margin-top: -125px;
+	margin-left: -125px;
+	border: 1px solid
+#666;
+	
+	
+
+}

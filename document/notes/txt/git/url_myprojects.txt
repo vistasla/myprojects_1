@@ -1,0 +1,6 @@
+https://github.com/vistasla/myprojects.git
+https://github.com/vistasla/test.git
+https://gitee.com/haoxiaodong1991/myprojects.git
+https://gitee.com/haoxiaodong1991/test.git
+https://gitee.com/haoxiaodong1991/images.git
+https://gitee.com/haoxiaodong1991/myprojects_1.git

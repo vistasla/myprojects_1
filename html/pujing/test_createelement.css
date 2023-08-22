@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+/*#navigate {
+	background-color: #CCC;
+	height: 40px;
+}
+button{
+	display: inline-block;
+	background-color:#0F6;
+	height: 20px;
+}
+#content {
+	background-color: #9F9;
+	height: 800px;
+	overflow: scroll;	
+}*/
+button{
+	display: inline-block;
+	/*background-color:red;*/
+	height: 20px;
+}

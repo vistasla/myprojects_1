@@ -1,0 +1,7 @@
+﻿net stop mysql
+net start mysql
+mysqld --init-file=C:\\mysql-init.txt
+mysqld --init-file=C:\\mysql-init.txt  --console
+mysqld --initialize
+mysql -u root -p
+mysql -u pujing -p

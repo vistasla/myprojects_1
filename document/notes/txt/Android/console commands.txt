@@ -1,0 +1,57 @@
+emulator -avd Resizable_Experimental_API_33 -dns-server 223.5.5.5,119.29.29.29
+emulator -avd Pixel_6_Pro_API_34 -dns-server 223.5.5.5,119.29.29.29
+emulator -avd Pixel_6_Pro_API_30 -dns-server 223.5.5.5,119.29.29.29
+emulator -help
+emulator -list-avds
+
+adb --help
+uninstall [options] package
+adb clear package
+adb force-stop MyApplication_2
+adb mdns services
+ipconfig
+ipconfig/all
+netstat -a
+netstat -n
+netstat -e
+netstat -s
+netstat -r
+tracert cn.bing.com
+tracert -h 1 cn.bing.com
+route PRINT
+adb install D:\myprojects\source\file\apk\Firefox-Android-115.2.apk
+adb install D:\myprojects\Android\MyApplication_2\app\build\outputs\apk\debug\app-debug.apk
+adb forward --list
+networking:
+ connect HOST[:PORT]      connect to a device via TCP/IP [default port=5555]
+ disconnect [HOST[:PORT]]
+     disconnect from given TCP/IP device [default port=5555], or all
+ pair HOST[:PORT] [PAIRING CODE]
+     pair with a device for secure TCP/IP communication
+ forward --list           list all forward socket connections
+ forward [--no-rebind] LOCAL REMOTE
+     forward socket connection using:
+       tcp:<port> (<local> may be "tcp:0" to pick any open port)
+       localabstract:<unix domain socket name>
+       localreserved:<unix domain socket name>
+       localfilesystem:<unix domain socket name>
+       dev:<character device name>
+       jdwp:<process pid> (remote only)
+       vsock:<CID>:<port> (remote only)
+       acceptfd:<fd> (listen only)
+ forward --remove LOCAL   remove specific forward socket connection
+ forward --remove-all     remove all forward socket connections
+ reverse --list           list all reverse socket connections from device
+ reverse [--no-rebind] REMOTE LOCAL
+     reverse socket connection using:
+       tcp:<port> (<remote> may be "tcp:0" to pick any open port)
+       localabstract:<unix domain socket name>
+       localreserved:<unix domain socket name>
+       localfilesystem:<unix domain socket name>
+ reverse --remove REMOTE  remove specific reverse socket connection
+ reverse --remove-all     remove all reverse socket connections from device
+ mdns check               check if mdns discovery is available
+ mdns services            list all discovered services
+
+-port <port>                   TCP port that will be used for the console
+-ports <consoleport>,<adbport> TCP ports used for the console and adb bridge

@@ -1,0 +1,68 @@
+git add .
+git branch --set-upstream-to=<https://github.com/vistasla/test.git>/<test> master
+git branch --set-upstream-to=https://github.com/vistasla/test.git/test master
+git clone -l
+git clone -l test
+git clone -l origin master
+git commit -m "first commit"
+git commit --test "first commit"
+git config advice.addIgnoredFile false
+git config -l
+git fetch -u origin test1
+git init
+git merge alsa-audio
+git merge test
+git merge test --commit
+git merge test -commit
+git push
+git push test
+git push origin branch.*.remote
+git push origin master
+git push origin serverfix
+git push origin --all
+git push origin --delete serverfix
+git push -f
+git push -u origin master
+git push -u test
+git push -u --set-upstream test test
+git push https://github.com/vistasla/notes.git
+git push https://gitee.com/haoxiaodong1991/notes.git
+git pull <https://github.com/vistasla/test.git> <master>
+git pull https://github.com/vistasla/test.git master
+git remote add origin https://github.com/vistasla/test.git
+git remote add test https://github.com/vistasla/test.git
+git remote merge master 
+git switch test2
+git switch -c alsa-audio
+git switch -c test2
+
+Git 全局设置:
+git config --global user.name "vistasla"
+git config --global user.email "vistasla@163.com"
+
+创建 git 仓库:
+mkdir test
+cd test
+git init
+touch README.md
+git add README.md
+git commit -m "first commit"
+git remote add origin https://gitee.com/haoxiaodong1991/test.git
+git push -u origin master
+
+已有仓库?
+cd existing_git_repo
+git remote add origin https://gitee.com/haoxiaodong1991/test.git
+git push -u origin master
+
+git remote rename
+git remote add test_1 https://gitee.com/haoxiaodong1991/test_1.git
+git pull https://gitee.com/haoxiaodong1991/myprojects_1.git
+git clone https://github.com/vistasla/test.git
+
+git push https://gitee.com/haoxiaodong1991/myprojects_1.git -f
+git push https://github.com/vistasla/myprojects_1.git -f
+git push https://gitee.com/haoxiaodong1991/blender.git -f
+git push https://github.com/vistasla/Blender.git -f
+
+

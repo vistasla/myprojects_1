@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+  (function() {
+    $(window).load(function() {
+      var $avatarInput, $avatarModal, $cropper, $imageBox, options, preview, rotateBase64Image, updatePage;
+  
+      $avatarModal = $('#git-avatar-modal');
+      $('#git-avatar-settings').click(function() {
+        $avatarModal.modal('show');
+        return false;
+      });
+      $avatarModal.find('.close').click(function() {
+        return $avatarModal.modal('hide');
+      });
+      options = {
+        thumbBox: '.thumb-box',
+        spinner: '.spinner',
+        imgSrc: 'avatar.png'
+      };
+      $cropper = null;
+      preview = function() {
+        var img;
+  
+        if ($cropper) {
+          img = $cropper.getDataURL();
+          return $('.cropped').each(function() {
+            return $(this).attr('src', img);
+          });
+        }
+      };
+      $imageBox = $('.image-box');
+      $imageBox.on('click', preview);
+      $imageBox.on('mousedown', preview);
+      $imageBox.on('mousewheel DOMMouseScroll', preview);
+      $avatarInput = $('#avatar-input');
+      $avatarInput.on('change', function() {
+        var reader;
+  
+        reader = new FileReader();
+        reader.onload = function(e) {
+          options.imgSrc = e.target.result;
+          $cropper = $imageBox.cropbox(options);
+          if ($cropper) {
+            $cropper.zoomIn() && $cropper.zoomOut();
+            preview();
+            return $('.zoom-group').show();
+          }
+        };
+        return reader.readAsDataURL(this.files[0]);
+      });
+      rotateBase64Image = function(isForward) {
+        var canvas, ctx, image;
+  
+        canvas = document.createElement('canvas');
+        ctx = canvas.getContext('2d');
+        image = $cropper.image;
+        canvas.width = image.height;
+        canvas.height = image.width;
+        ctx.translate(image.height / 2, image.width / 2);
+        ctx.rotate(90 * Math.PI / 180 * (isForward ? 1 : -1));
+        ctx.drawImage(image, image.width / -2, image.height / -2);
+        options.imgSrc = canvas.toDataURL();
+        options.ratio = $cropper.ratio;
+        return $cropper = $imageBox.cropbox(options);
+      };
+      $('#rotate-left').on('click', function() {
+        rotateBase64Image(false);
+        return setTimeout(preview);
+      });
+      $('#zoom-in').on('click', function() {
+        $cropper.zoomIn();
+        return preview();
+      });
+      $('#zoom-out').on('click', function() {
+        $cropper.zoomOut();
+        return preview();
+      });
+      $('#rotate-right').on('click', function() {
+        rotateBase64Image(true);
+        return setTimeout(preview);
+      });
+      $('#upload-avatar').on('click', function() {
+        return $avatarInput.click();
+      });
+      $('#confirm-avatar').on('click', function() {
+        var img;
+  
+        if ($cropper) {
+          img = $cropper.getDataURL();
+          return $.ajax({
+            type: "POST",
+            url: '/profile/upload_portrait_with_base64',
+            data: {
+              avatar: img
+            },
+            success: function(data) {
+              $avatarModal.modal('hide');
+              if (data === 'success') {
+                Flash.show("头像更新成功");
+                return updatePage(img);
+              } else {
+                return Flash.show("更新失败，请稍后再试");
+              }
+            }
+          });
+        }
+      });
+      return updatePage = function(newAvatar) {
+        $imageBox.css('background-image', '');
+        $avatarInput.val('');
+        $('.zoom-group').hide();
+        return $('.haoxiaodong1991-avatar').each(function() {
+          return $(this).attr('src', newAvatar);
+        });
+      };
+    });
+  
+  }).call(this);
+</script>
+</head>
+
+<body>
+<div class="modal small ui user transition visible active" id="git-avatar-modal" style="display: block !important;">
+<i class="iconfont icon-close close"></i>
+<div class="header">
+更换头像
+</div>
+<div class="content">
+<div class="image-box">
+<div class="thumb-box"></div>
+<div class="spinner" style="display: none;">Loading...</div>
+</div>
+<div class="preview-box pull-right">
+<div>预览</div>
+<ul>
+<li>
+<div class="ui">
+<img class="cropped" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAEGUlEQVR4nO2czUozMRSGvY5eyNyHd+FN9Bq8AXE9C5duhOKmA92oG/GDIhREqii0WLSltIV8izolc5pMMtNp8tq+gWeX6phnTn7OST1pdS4UweEk9gMQCoGGQsCgEDAoBAwKAYNCwKAQMCgEDAoBg0LAoBAwKAQMCgGDQsCgEDAoBAwKAYNCwKAQMCgEDAoBg0LAoBAwKAQMaCGXr0/q5vNlQ+znOXohg+lE6S3281AIhWDRhBA57dWBQhoUIn9GnUYhFIIJheyZ07vrSnP3eDEvDEydOV8K8fn8bLU8DiHtfm/nt9Wn7RJlZ4+3hf5v8x8KiSnk/uuj0P/y9YlCYglJsrTQd7yYB5URXAjCGlL2fDefL4W+V+/Phy2kKvvYZdn6JVlaWMxnq6VKspRCYgm5fH3aisYYfzOF/KJPj7Gig0J+QYkOCvkFJTqCCmn3e5WzrHV3WTefL6rd73kJkdHRHQ2jvoTBhMgt5b5bPu24hEjpp3fXFLKP5iNERsf910dUGUcvREZHjINgNCGuNUTmkAbTyVYfObj3Xx87rSEyQpQKn7uKJsRHmOkN15FRlg96Ga41pN3vbaXbY0o5eiGtzjrlLqWcDx4oJJYQk5TZahllxxVFSLvfU2ePt40JSbLUKqfK4VKuKYPp5DiEvM1/lFLrekN+EKsj5HzwsCm52k7YVU/7/75Hhf4HXaBqddY1Eb3le38pxDSHSyFy8EwSqwqRafiDLuG2Ohfq6v3ZOPA+64OpTx5tSpnn/Tr5sO5oWPiMnF4PSogcwLLB9hEiI0uetusIkRcdQmZ/g5dwbYMnD4am9cAmTQ66HiV1M8b6KT7k4h5USNlU4DNwNiFlUVJXiP65gxWiL5byRofebLc9yqY1W5RQiAW5x9cTeXIqsw1AmRBblFCIBZlZ1dcI3xKqa+E31Ta4hhhw7YTkecKWR3IJMVX/6ghxPe+fF5JkaaEkqy/m8ragUuYdlo+QVmf9Zs9Wy82UWFXI6d31VqSFPK0HP4fIt1++1WUnYx8hZ4+3BaGmxb6sJiOzvqEvPUTP9lap2jWR7ZUbCFcLfSUoqhBTWbcs5d1U+t23xaixRxNiKgq5BqApIa5vVY0X82hVwyhCkiwt5LTy5ioINVmgyvNgkqO5BuSS4XNBTQrxGby/9l33oEJsMsaLuXMnk2Tp1gbA53dSiAXT/j5vst4wmE5UdzTcbEe7o+HWZ/XUPYXUwBYdpsVTLvam5rsDopAS5M7KtpPx+W65bxWPQhzkJdyybaUsVulttlpWujNFIR643m7btdM6l9f+2v/cip46IRQCDYWAQSFgUAgYFAIGhYBBIWBQCBgUAgaFgEEhYFAIGBQCBoWAQSFgUAgYFAIGhYBBIWBQCBgUAgaFgEEhYFAIGP8Bux6OqOifoE8AAAAASUVORK5CYII=" alt="郝晓东-haoxiaodong1991" width="100" height="100">
+</div>
+<span class="text-muted">100 x 100</span>
+</li>
+<li>
+<div class="ui">
+<img class="cropped" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACMUlEQVRoge2XQYrCQBBFPYcHyT28RS7hGbzA4DoLl9kI4saAG3UjCiIERFQUIooaggn8WUj1dMd0nGljbIdu+AtNYupV1a9uK9XOF/6DKu8OwIAYEM1lQHSTAdFNBkQ3GRDdVCiI5Tmoz/qoDdzPBqnP+gCA9m4hvcced1Gf9aVSTULpIP7liLyV9+xLQLKy2drMAQDDw1aaaQLxL0dB6+j8HpC/LgqQQNK/NzxsAQANf1QuSDqjfFb31+juWnM5kYJYnsOeU43nbR7hv2vvFgDAYD8SxPIchEn8VDWUQWQjNM/sZPg0SBHVUAZ5NELzDM+DFFUNZZBesBKMvL9GAIB1dBZMHybxneF5EGrFdXSG5Tnlg6RF7VGf9YUA/cvxoUeay0khMMogluewFz8C4Y8dWVOLYLLAXw5Cxm74I/SCVSbIOjqzPSUPpNr52RBVTa8MQj7gJ5E97t5VhAIkSBlIbeAy+NJA0i9NB8eD0L1UFRkIn5zSQKiVqA0A8XiR9ghflTyQvGuFg9DsD5MYlueg4Y8AANNTIAWxx132OS/YMInLrUhzOWHVoGy3NnMpSLVzm2y8n2oDV9j1p6fgLiEvByFRpgEIe8Bv9hGaevwKk5gNjNJALM9h5uwFK+Hab0BqA1c4IVDFVONRnloEQTsyf5Ckdstqk2cMXTgItRTfClQFfmVtblqBVDs3w/P9bI+7mf8I06J20gZENxkQ3WRAdJMB0U0GRDcZEN1kQHTTN7pxcDYKCW89AAAAAElFTkSuQmCC" alt="郝晓东-haoxiaodong1991" width="50" height="50">
+</div>
+<span class="text-muted">50 x 50</span>
+</li>
+</ul>
+</div>
+<div class="actions">
+<input accept="image/jpg, image/jpeg, image/png" id="avatar-input" type="file">
+<div class="pull-left zoom-group">
+<i class="fa fa-undo" id="rotate-left"></i>
+<i class="fa fa-plus" id="zoom-in"></i>
+<i class="fa fa-minus" id="zoom-out"></i>
+<i class="fa fa-repeat" id="rotate-right"></i>
+</div>
+<div class="pull-right avatar-buttons">
+<div class="ui button blank" id="upload-avatar">
+上传
+</div>
+<div class="ui button orange" id="confirm-avatar">
+确定
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

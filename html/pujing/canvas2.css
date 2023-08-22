@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+#drawing {
+	
+	background-color: #CCC;	
+	border: 3px solid #FC9;
+		width:192px;
+		height:108px;
+	position: absolute;
+	left:40%;
+	top: 40%;
+		
+	
+	
+}
+
+
+

@@ -1,0 +1,3 @@
+A launcher for a previously-prepared call to start the process of executing an ActivityResultContract.
+RegisterForActivityResult
+A registry that stores activity result callbacks for registered calls. You can create your own instance for testing by overriding onLaunch and calling dispatchResult immediately within it, thus skipping the actual Activity.startActivityForResult call. When testing, make sure to explicitly provide a registry instance whenever calling ActivityResultCaller.registerForActivityResult, to be able to inject a test instance.

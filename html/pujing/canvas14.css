@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+#test {
+position: absolute;
+top: 50%;
+left: 50%;
+width: 250px;
+height: 250px;
+margin-top: -125px;
+margin-left: -125px;
+border: 1px solid
+#666;
+border-radius: 100%;
+/*-webkit-box-shadow: 0 0 120px 100px rgba(0,0,0,0.5);*/
+/*box-shadow: 0 0 10 100px
+rgba(0, 0, 0,0.5);*/
+:link    {color:blue;}
+:visited {
+color:#0C3;}
+:hover   {/*-webkit-box-shadow: 0 0 120px 100px rgba(0,0,0,0.5);*/
+color:#0C3;}
+:active  {color:yellow;}
+}
+/*button:link    {color:blue;}
+button:visited {color:blue;}
+button:hover   {-webkit-box-shadow: 0 0 10 100px rgba(0,0,0,0.5);}
+button:active  {color:yellow;}*/
