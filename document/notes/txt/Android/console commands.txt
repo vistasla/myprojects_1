@@ -20,7 +20,7 @@ tracert cn.bing.com
 tracert -h 1 cn.bing.com
 route PRINT
 adb install D:\myprojects\source\file\apk\Firefox-Android-115.2.apk
-adb install D:\myprojects\Android\MyApplication_2\app\build\outputs\apk\debug\app-debug.apk
+adb install D:\myprojects\Android\MyApplication\app\build\outputs\apk\debug\app-debug.apk
 adb forward --list
 networking:
  connect HOST[:PORT]      connect to a device via TCP/IP [default port=5555]

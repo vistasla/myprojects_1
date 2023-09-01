@@ -1,0 +1,7 @@
+0.0
+2023-08-29 12:52:15.400 31728-31728 AccessLoca...ctivity_1: com.example.myapplication            D  34.802953
+2023-08-29 12:52:15.400 31728-31728 AccessLoca...ctivity_1: com.example.myapplication            D  113.544604
+gate
+0.0
+2023-09-01 10:58:12.003  4786-4786  locationConsumer:       com.example.myapplication            D  34.803018
+2023-09-01 10:58:12.003  4786-4786  locationConsumer:       com.example.myapplication            D  113.544529

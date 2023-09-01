@@ -1,0 +1,4 @@
+passive 1
+2023-08-29 09:49:45.616 18530-18530 Providers_1:            com.example.myapplication            D  network 2 hasAltitudeSupport() true
+2023-08-29 09:49:45.616 18530-18530 Providers_2:            com.example.myapplication            D  fused 1
+2023-08-29 09:49:45.617 18530-18530 Providers_3:            com.example.myapplication            D  gps 1 hasNetworkRequirement() false
