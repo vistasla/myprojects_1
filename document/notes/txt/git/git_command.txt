@@ -62,7 +62,21 @@ git clone https://github.com/vistasla/test.git
 
 git push https://gitee.com/haoxiaodong1991/myprojects_1.git -f
 git push https://github.com/vistasla/myprojects_1.git -f
+
 git push https://gitee.com/haoxiaodong1991/blender.git -f
 git push https://github.com/vistasla/Blender.git -f
 
+git push https://gitee.com/haoxiaodong1991/my-application.git -f
+git push https://github.com/vistasla/MyApplication.git -f
+
+git push https://gitee.com/haoxiaodong1991/my-clock.git -f
+git push https://github.com/vistasla/MyClock.git -f
+
+git push https://gitee.com/haoxiaodong1991/notes_-blender.git -f
+git push https://github.com/vistasla/notes_Blender.git -f
+
+git push https://gitee.com/haoxiaodong1991/notes_-android.git -f
+git push https://github.com/vistasla/notes_Android.git -f
+
+git push https://gitee.com/haoxiaodong1991/notes_3ds-max.git -f
 
